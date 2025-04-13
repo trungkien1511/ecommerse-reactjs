@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+@layer base {
+    body {
+        margin: 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+@theme {
+    --color-primary: #333;
+    --color-secondary: #888;
+    --color-success: #10b981;
+}
+
+@utility button-primary {
+    background-color: var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+@utility button-secondary {
+    background-color: var(--color-secondary);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+@tailwind utilities;
