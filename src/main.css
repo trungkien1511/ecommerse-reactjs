@@ -3,7 +3,7 @@
 @layer base {
     body {
         margin: 0;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: 'Roboto Mono', Times, serif;
     }
 }
 
@@ -26,3 +26,44 @@
 }
 
 @tailwind utilities;
+
+@layer utilities {
+    .menu-underline {
+        position: relative; /* Đảm bảo ::after được định vị tương đối với phần tử cha */
+    }
+
+    .menu-underline::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: auto;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 300ms ease-in-out, left 500ms ease-in-out, right 500ms ease-in-out;
+    }
+
+    .menu-underline:hover::after {
+        transform: scaleX(1);
+        left: 0;
+        right: auto;
+        transition: transform 300ms ease-in-out, left 500ms ease-in-out, right 500ms ease-in-out;
+    }
+}
+
+@layer components {
+    .menu_container {
+        @apply flex items-center space-x-[40px];
+    }
+
+    .icon_container {
+        @apply flex items-center space-x-[10px];
+    }
+
+    .button_highlight {
+        @apply bg-black text-white px-10 py-3 rounded text-[14px] border hover:bg-transparent hover:text-black transition-all duration-300 ease-in-out;
+    }
+}
