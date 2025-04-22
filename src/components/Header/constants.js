@@ -16,4 +16,14 @@ const dataMenu = [
     { content: 'Sign in', href: '#' }
 ];
 
-export { dataIcon, dataMenu };
+const dataFooter = [
+    { content: 'Home', href: '#' },
+    { content: 'Elements', href: '#' },
+    { content: 'Shop', href: '#' },
+    { content: 'Blog', href: '#' },
+    { content: 'About us', href: '#' },
+    { content: 'Contact us', href: '#' },
+    { content: 'Compare', href: '#' }
+];
+
+export { dataIcon, dataMenu, dataFooter };

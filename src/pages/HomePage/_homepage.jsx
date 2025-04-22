@@ -2,10 +2,12 @@ import Banner from './Banner';
 import MyHeader from '../../components/Header/Header';
 import Info from './Info/Info';
 import AdvanceHeading from './AdvanceHeading';
-import HeadingListProduct from './HeadingListProduct/HeadingListProduct';
+import HeadingListProduct from './HeadingListProduct';
 import { useEffect, useState } from 'react';
 import { getProduct } from '@/apis/productService';
 import PopularProduct from './PopularProduct';
+import SaleHomePage from './SaleHomePage';
+import Footer from './Footer';
 
 const HomePage = () => {
     const [listProducts, setListProducts] = useState([]);
@@ -30,6 +32,8 @@ const HomePage = () => {
             <AdvanceHeading />
             <HeadingListProduct data={listProducts.slice(0, 2)} />
             <PopularProduct data={listProducts.slice(2, listProducts.length)} />
+            <SaleHomePage />
+            <Footer />
         </>
     );
 };

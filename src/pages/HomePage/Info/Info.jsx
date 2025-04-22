@@ -9,8 +9,10 @@ const Info = () => {
                         <div>
                             <img className='w-[40px] h-[40px]' src={item.src} alt='' />
                         </div>
-                        <div className='space-y-1'>
-                            <span className='text-[17px]'>{item.title}</span>
+                        <div>
+                            <div className='mb-[10px]'>
+                                <span className='text-[17px]'>{item.title}</span>
+                            </div>
                             <p className='text-[16px] text-gray-400'>{item.description}</p>
                         </div>
                     </div>

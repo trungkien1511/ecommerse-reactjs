@@ -1,5 +1,4 @@
 const ProductItem = ({ src, preSrc, name, price }) => {
-    console.log(preSrc);
     return (
         <div className='space-y-2'>
             <div className='relative w-[295px] h-[353px] group'>

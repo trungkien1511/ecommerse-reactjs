@@ -67,3 +67,12 @@
         @apply bg-black text-white px-10 py-3 rounded text-[14px] border hover:bg-transparent hover:text-black transition-all duration-300 ease-in-out;
     }
 }
+
+h2 {
+    font-family: roboto mono, Sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 46px;
+    color: #222;
+}
