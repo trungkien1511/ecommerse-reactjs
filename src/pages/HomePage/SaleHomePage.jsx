@@ -1,38 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
 import Button from '../../components/Button';
+import useTranslateXImage from '../../hooks/useTranslateXImage';
 
 const SaleHomePage = () => {
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const previousScrollPosition = useRef(0);
-    const [translateXPosition, setTranslateXPosition] = useState(0);
-
-    const scrollTracking = () => {
-        const currentScrollPosition = window.pageYOffset;
-        setScrollPosition(currentScrollPosition);
-        previousScrollPosition.current = currentScrollPosition;
-    };
-
-    const handleTranslateX = () => {
-        // Bắt đầu hiệu ứng khi scrollPosition >= 1500
-        if (scrollPosition >= 1500) {
-            // Tính toán translateX dựa trên scrollPosition
-            const translateValue = Math.min((scrollPosition - 1500) * 0.1, 100); // 0.1 là tốc độ di chuyển, 100 là giới hạn tối đa
-            setTranslateXPosition(translateValue);
-        } else {
-            // Khi scroll lên trên 1500, trở về vị trí giữa cột
-            setTranslateXPosition(0);
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', scrollTracking);
-        return () => window.removeEventListener('scroll', scrollTracking);
-    }, []);
-
-    useEffect(() => {
-        handleTranslateX();
-    }, [scrollPosition]);
-
+    const { translateXPosition } = useTranslateXImage();
     return (
         <div className='SaleHomePage'>
             <div className='mt-20 w-full mx-auto mb-[5.65em]'>
@@ -60,7 +30,7 @@ const SaleHomePage = () => {
                                 Libero sed faucibus facilisis fermentum. Est nibh sed massa sodales.
                             </div>
                             <div className='mt-2'>
-                                <Button />
+                                <Button content={'Read More'} />
                             </div>
                         </div>
                     </div>
